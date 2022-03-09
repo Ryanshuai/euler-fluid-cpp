@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.6)
+project(fluid)
+add_executable(fluid main.cpp container.cpp ix.cpp options.cpp physics.cpp sim.cpp)
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+target_link_libraries(fluid sfml-graphics sfml-audio)
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-std=c++11)
+endif()
