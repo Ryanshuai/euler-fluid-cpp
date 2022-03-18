@@ -51,7 +51,7 @@ void Physics::LinSolve(int b, float x[], float x0[], float a, float c, int iter,
     }
 }
 
-void Physics::Diffuse(int b, float x[], float x0[], float diff, float dt, int iter, int N) {
+void Physics::Diffuse(int b, float x[], float x0[], float diff, float dt, int iter, int N) {//x: old, x0: new value
     float a = dt * diff * (N - 2) * (N - 2);
     this->LinSolve(b, x, x0, a, 1 + 6 * a, iter, N);
 }

@@ -12,9 +12,9 @@ private:
 	int size;
 
 	float dt;
-	float diff;
-	float visc;
-	
+	float diff;  //diffusion
+	float visc;  //viscosity
+
 	float px[SIZE*SIZE];
 	float py[SIZE*SIZE];
 
@@ -23,7 +23,7 @@ private:
 
 	float previousDensity[SIZE*SIZE];
 	float density[SIZE*SIZE];
-	
+
 	void InitArr(float arr[], int size);
 	float MapToRange(float value, float minIn, float maxIn, float minOut, float maxOut);
 public:
@@ -35,7 +35,7 @@ public:
 	void AddVelocity(float x, float y, float px, float py);
 	void Step();
 	void Render(sf::RenderWindow& win, Color color);
-	void FadeDensity(int size);
+	void FadeDensity(int size, float strength);
 
 	sf::Color Hsv(int hue, float sat, float val, float d);
 };
